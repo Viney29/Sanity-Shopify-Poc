@@ -1,0 +1,38 @@
+<h2 class="title">{{ threeColumn.title }}</h2>
+<div class="threeColumn --{{threeColumn.layout}}">
+  {% for item in threeColumn.items %}
+    <div class="threeColumn__item">
+      <img class="threeColumn__icon" src="{{item.iconUrl}}">
+      <p class="threeColumn_copy">{{ item.content }}</p>
+    </div>
+  {% endfor %}
+</div>
+
+<style>
+  .threeColumn {
+    position: relative;
+    display: flex;
+    margin: 80px auto;
+  }
+
+  .threeColumn__item {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: calc(100% / 3);
+  }
+
+  .threeColumn__icon {
+    width: 80px;
+    object-fit: cover;
+  }
+
+  .threeColumn_copy {
+    font-size: 18px;
+    line-height: 24px;
+    color: #555;
+    text-align: center;
+  }
+</style>
